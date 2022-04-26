@@ -1,4 +1,4 @@
-class LinkedList<T> {
+class LinkedList<T> implements Iterable<T> {
   size: number;
   head: ListNode<T>;
   tail: ListNode<T>;
@@ -6,6 +6,20 @@ class LinkedList<T> {
   constructor() {
     this.size = 0;
     this.head = this.tail = null;
+  }
+
+  [Symbol.iterator](): Iterator<T, any, undefined> {
+    let current = this.head;
+    return {
+      next: () => {
+        if (current) {
+          const it = { value: current.value, done: false };
+          current = current.next;
+          return it;
+        }
+        return { value: undefined, done: true };
+      },
+    };
   }
 
   getSize() {

@@ -1,8 +1,5 @@
 const mergeSort = (array) => {
-  if (!array.length) {
-    return [];
-  }
-  if (array.length === 1) {
+  if (array.length <= 1) {
     return array;
   }
   const midpoint = array.length / 2;
@@ -38,6 +35,4 @@ const merge = (sortedArray1, sortedArray2) => {
   return responseArray;
 };
 
-const array = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
-const sortedArray = mergeSort(array);
-console.log(sortedArray);
+export { mergeSort };

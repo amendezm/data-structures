@@ -1,7 +1,7 @@
 class LinkedList<T> implements Iterable<T> {
   size: number;
-  head: ListNode<T>;
-  tail: ListNode<T>;
+  head: ListNode<T> | null;
+  tail: ListNode<T> | null;
 
   constructor() {
     this.size = 0;
@@ -32,7 +32,7 @@ class LinkedList<T> implements Iterable<T> {
 
   push(value: T) {
     const newNode = new ListNode<T>(value);
-    if (this.isEmpty()) {
+    if (!this.tail) {
       this.head = this.tail = newNode;
     } else {
       this.tail.next = newNode;
@@ -83,7 +83,7 @@ class LinkedList<T> implements Iterable<T> {
 
 class ListNode<T> {
   value: T;
-  next: ListNode<T>;
+  next: ListNode<T> | null;
 
   constructor(value) {
     this.value = value;

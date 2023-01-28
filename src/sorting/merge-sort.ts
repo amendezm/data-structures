@@ -1,4 +1,4 @@
-const mergeSort = (array) => {
+const mergeSort = (array: number[]) => {
   if (array.length <= 1) {
     return array;
   }
@@ -8,11 +8,11 @@ const mergeSort = (array) => {
   return merge(firstHalf, secondHalf);
 };
 
-const merge = (sortedArray1, sortedArray2) => {
+const merge = (sortedArray1: number[], sortedArray2: number[]) => {
   const [size1, size2] = [sortedArray1.length, sortedArray2.length];
   let index1 = 0;
   let index2 = 0;
-  let responseArray = [];
+  let responseArray: number[] = [];
 
   while (index1 < size1 && index2 < size2) {
     if (sortedArray1[index1] < sortedArray2[index2]) {

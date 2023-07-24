@@ -1,4 +1,7 @@
-import { maxSubarray, dynamicMaxSubarray } from "./algorithms/max-subarray";
+import { reverseArray } from "./algorithms/arrays-string-greedy-and-bit manipulation/reverse-array";
 
-console.log(maxSubarray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
-console.log(dynamicMaxSubarray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+const array = [1, 2, 3];
+
+reverseArray(array);
+
+console.log(array);

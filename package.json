@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --watch --mode=development",
-    "start": "nodemon dist/index.js"
+    "dev": "nodemon dist/index.js",
+    "start": "npm run build & npm run dev"
   },
   "repository": {
     "type": "git",

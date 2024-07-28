@@ -1,7 +1,15 @@
-import { reverseArray } from "./algorithms/arrays-string-greedy-and-bit manipulation/reverse-array";
+import { Observable } from "./observable";
 
-const array = [1, 2, 3];
+const observable = new Observable((subscribe) => {
+  console.log("START");
+  subscribe.next(1);
+  subscribe.next(2);
+  subscribe.next(3);
+  console.log("END");
+});
 
-reverseArray(array);
-
-console.log(array);
+observable.subscribe({
+  next: (x) => {
+    console.log(x);
+  },
+});
